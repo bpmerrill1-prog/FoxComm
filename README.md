@@ -1,7 +1,7 @@
 
 # FoxComm — Windows (P2P + UPnP)
 
-One app to host or join. Dark, futuristic UI. Voice + 4K screen streaming (best-effort). No accounts. LAN-first; tries UPnP for Internet play.
+One app to host or join. Dark, futuristic UI. Voice + 4K screen streaming (best-effort). No accounts. LAN-first; tries UPnP for Internet play. WIP
 
 ## Build locally (publisher only)
 ```
