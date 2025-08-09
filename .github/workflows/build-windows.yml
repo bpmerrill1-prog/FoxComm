@@ -1,0 +1,39 @@
+
+name: Build FoxComm (Windows)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+    paths:
+      - '**.js'
+      - '**.json'
+      - '**.html'
+      - '**.css'
+      - '.github/workflows/**'
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Package app
+        run: npm run pack
+        shell: powershell
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: FoxComm-win64
+          path: dist/FoxComm-win32-x64/**

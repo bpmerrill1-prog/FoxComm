@@ -1,0 +1,23 @@
+{
+  "name": "foxcomm",
+  "version": "0.3.2a",
+  "productName": "FoxComm",
+  "description": "FoxComm \u2014 P2P voice + 4K streaming. Host or join with no accounts.",
+  "main": "main.js",
+  "author": "Brandon Merrill",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-packager . FoxComm --platform=win32 --arch=x64 --icon=foxcomm_icon.ico --out=dist --overwrite --prune=false",
+    "sfu": "node sfu_server.js"
+  },
+  "dependencies": {
+    "ws": "^8.13.0",
+    "node-upnp": "^1.1.0",
+    "mediasoup": "^3.13.16"
+  },
+  "devDependencies": {
+    "electron": "26.2.0",
+    "electron-packager": "^17.1.1"
+  }
+}
